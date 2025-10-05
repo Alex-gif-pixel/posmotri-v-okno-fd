@@ -9,6 +9,9 @@ html {
 }
 
 .page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -16,6 +19,68 @@ html {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+}
+
+.result__video-container {
+  width: 711px;
+  height: 386px;
+}
+
+.result__video {
+  object-fit: cover;
+  width: 711px;
+  height: 386px;
+}
+
+.content {
+  width: 1140px;
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  column-gap: 30px;
+}
+.search-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.content__details {
+  display: flex;
+  flex-direction: column;
+  min-width: 399px;
+  min-height: 100%;
+}
+
+.title {
+  margin-bottom: 30px;
+}
+
+.content__list-container {
+  height: 298px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.content__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+.content__video-card {
+  display: flex;
+  align-items: start;
+}
+
+.content__video-card-thumbnail {
+  min-height: 194px;
+  min-height: 103px;
+  object-fit: cover;
+  object-position: center;
 }
 
 h1,
