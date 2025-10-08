@@ -91,8 +91,9 @@ ol {
 /*Стили для видео*/
 .result__video {
   object-fit: cover;
-  width: 711px;
-  height: 386px;
+  object-position: center; /*Добавил object-position: center*/
+  width: 100%; /*Изменил ширину на 100%*/
+  height: 100%; /*Изменил высоту на 100%*/
 }
 
 /*Форма*/
@@ -108,6 +109,7 @@ ol {
   align-items: center;
   width: fit-content;
   gap: 5px;
+  cursor: pointer; /*Добавил cursor: pointer для сокращения дублирования кода*/
 }
 
 /*Блок с чекбоксами*/
@@ -118,8 +120,7 @@ ol {
 /*заголовок чекбоксов*/
 .search-form__fieldset-title {
   font-size: 18px;
-  font-weight: 400;
-  margin-bottom: 7px;
+  margin-bottom: 6px;
 }
 
 /*Поле ввода*/
@@ -138,8 +139,6 @@ ol {
   align-items: center;
   font-size: 18px;
   font-family: inherit;
-  font-weight: 400;
-  line-height: normal;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -185,7 +184,6 @@ ol {
   width: 100%;
   height: 100%;
   opacity: 0;
-  cursor: pointer;
 }
 
 /*Селектор отображения выбранного чекбокса*/
@@ -196,7 +194,6 @@ ol {
 /*Селектор подчеркивание текста при наведении на чекбокс и сам текст*/
 .search-form__label:has(:hover) .search-form__label-text {
   text-decoration: underline;
-  cursor: pointer;
 }
 
 /*Стили кнопок "Найти" и "Показать ещё"*/
@@ -209,19 +206,18 @@ ol {
   font-size: 18px;
   font-weight: 700;
   cursor: pointer;
+  min-height: 34px;
 }
 
 /* "Найти" */
 .search-form__submit-button {
   width: 194px;
-  height: 34px;
   align-self: flex-end;
 }
 
 /* "Показать ещё" */
 .more-button {
-  width: 100%;
-  height: 34px;
+  width: calc(100% - 4px);
 }
 
 /*Стили при наведении*/
@@ -249,7 +245,7 @@ button:focus {
 .content__details {
   display: flex;
   flex-direction: column;
-  min-width: 399px;
+  width: 399px;
   height: 100%;
   gap: 23px;
 }
@@ -260,7 +256,7 @@ button:focus {
   font-size: 75px;
   font-weight: 700;
   font-style: normal;
-  line-height: 94%;
+  line-height: 0.94;
   text-transform: uppercase;
 }
 
@@ -298,24 +294,34 @@ button:focus {
   justify-content: space-between;
 }
 
+.content__video-card-description-container {
+  flex-grow: 1;
+  width: 196px;
+}
+
 /*Заголовок видео*/
 .content__video-card-title {
   text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
   font-family: Oswald, sans-serif;
   font-size: 30px;
   font-weight: 700;
-  line-height: 44px;
+  line-height: 1;
   text-transform: uppercase;
+  margin-bottom: 6px;
 }
 
 /*Подзаголовок видео*/
 .content__video-card-description {
-  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
-  font-family: Fira Sans Condensed;
+  line-clamp: 4;
+  overflow: hidden;
+  font-family: Fira Sans Condensed, sans-serif;
   font-size: 18px;
-  font-weight: 400;
-  line-height: 16.2px;
+  line-height: 0.9;
 }
 
 /*Стили ссылок*/
@@ -353,8 +359,8 @@ button:focus {
 
 /*Превью картинка*/
 .content__video-card-thumbnail {
-  inline-size: 194px;
-  block-size: 103px;
+  width: 194px;
+  height: 103px;
   object-fit: cover;
   object-position: center;
 }
